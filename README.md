@@ -1,3 +1,3 @@
 # AspNetCore
 
-Simple bookshop using minimal api and microservices.
+Simple bookshop backend using minimal api and microservices.
