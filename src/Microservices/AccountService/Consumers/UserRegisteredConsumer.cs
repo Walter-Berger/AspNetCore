@@ -1,4 +1,4 @@
-﻿using ECommerce.Contracts.Events;
+﻿using Contracts.Events;
 
 namespace AccountService.Consumers;
 

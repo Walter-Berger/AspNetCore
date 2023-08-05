@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AccountService.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230521190443_init")]
-    partial class init
+    [Migration("20230805191046_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace AccountService.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AccountService.Domain.User", b =>
+            modelBuilder.Entity("AccountService.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");

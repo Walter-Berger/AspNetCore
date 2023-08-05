@@ -1,5 +1,5 @@
-﻿global using ECommerce.Contracts.Requests;
-global using ECommerce.Contracts.Responses;
+﻿global using Contracts.Requests;
+global using Contracts.Responses;
 global using FluentValidation;
 global using IdentityService.Constants.ApiRoutes;
 global using IdentityService.Constants.ErrorDetails;

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookService.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230521190702_init")]
-    partial class init
+    [Migration("20230805191021_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace BookService.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("BookService.Domain.Book", b =>
+            modelBuilder.Entity("BookService.Models.Book", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");

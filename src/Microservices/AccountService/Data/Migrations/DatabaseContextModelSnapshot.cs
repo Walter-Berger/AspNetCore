@@ -22,7 +22,7 @@ namespace AccountService.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AccountService.Domain.User", b =>
+            modelBuilder.Entity("AccountService.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
