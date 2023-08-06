@@ -1,6 +1,4 @@
-﻿using BookService.Exceptions.ErrorDetails;
-
-namespace BookService.Features.UpdateBook;
+﻿namespace BookService.Features.UpdateBook;
 
 public class UpdateBookCmdHandler : IRequestHandler<UpdateBookCmd, Unit>
 {

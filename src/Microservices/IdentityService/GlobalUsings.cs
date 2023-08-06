@@ -1,12 +1,12 @@
-﻿global using Contracts.Extensions;
+﻿global using Contracts.Events;
+global using Contracts.Extensions;
 global using Contracts.Requests;
 global using Contracts.Responses;
 global using FluentValidation;
-global using IdentityService.Constants.ApiRoutes;
-global using IdentityService.Constants.ErrorDetails;
 global using IdentityService.Data;
-global using IdentityService.Endpoints;
+global using IdentityService.Endpoints.ApiRoutes;
 global using IdentityService.Exceptions;
+global using IdentityService.Exceptions.ErrorDetails;
 global using IdentityService.Features.Login;
 global using IdentityService.Features.Register;
 global using IdentityService.Interfaces;

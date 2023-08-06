@@ -1,6 +1,4 @@
-﻿using AccountService.Exceptions.ErrorDetails;
-
-namespace AccountService.Features.GetAllUsers;
+﻿namespace AccountService.Features.GetAllUsers;
 
 public class GetAllUsersQryHandler : IRequestHandler<GetAllUsersQry, List<GetAllUsersQryResult>>
 {

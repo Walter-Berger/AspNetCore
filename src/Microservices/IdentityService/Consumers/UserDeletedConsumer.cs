@@ -1,6 +1,4 @@
-﻿using Contracts.Events;
-
-namespace IdentityService.Consumers;
+﻿namespace IdentityService.Consumers;
 
 public class UserDeletedConsumer : IConsumer<UserDeletedEvent>
 {

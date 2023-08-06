@@ -1,6 +1,4 @@
-﻿using BookService.Exceptions.ErrorDetails;
-
-namespace BookService.Features.DeleteBook;
+﻿namespace BookService.Features.DeleteBook;
 
 public class DeleteBookCmdHandler : IRequestHandler<DeleteBookCmd, Unit>
 {
@@ -14,7 +12,7 @@ public class DeleteBookCmdHandler : IRequestHandler<DeleteBookCmd, Unit>
     public async Task<Unit> Handle(DeleteBookCmd request, CancellationToken cancellationToken)
     {
         // check if book exists
-        var book = await _databaseContext.Books.FirstOrDefaultAsync(x => x.Id == request.Id && x.IsBought == false, cancellationToken) 
+        var book = await _databaseContext.Books.FirstOrDefaultAsync(x => x.Id == request.Id && x.IsBought == false, cancellationToken)
             ?? throw new NotFoundException(ErrorDetails.BookNotFound);
 
         // check if book is currently loaned

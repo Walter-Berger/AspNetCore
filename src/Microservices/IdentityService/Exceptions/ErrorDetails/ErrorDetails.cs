@@ -1,4 +1,4 @@
-﻿namespace IdentityService.Constants.ErrorDetails;
+﻿namespace IdentityService.Exceptions.ErrorDetails;
 
 public static class ErrorDetails
 {

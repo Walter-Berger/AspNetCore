@@ -1,6 +1,4 @@
-﻿using AccountService.Endpoints.ApiRoutes;
-
-namespace AccountService.Endpoints;
+﻿namespace AccountService.Endpoints;
 
 public static class GetUser
 {
@@ -24,4 +22,3 @@ public static class GetUser
         return endpoints;
     }
 }
-  

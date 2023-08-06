@@ -1,6 +1,4 @@
-﻿using AccountService.Endpoints.ApiRoutes;
-
-namespace AccountService.Endpoints;
+﻿namespace AccountService.Endpoints;
 
 public static class CreateUser
 {

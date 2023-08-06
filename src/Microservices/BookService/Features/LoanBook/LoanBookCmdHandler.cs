@@ -1,6 +1,4 @@
-﻿using BookService.Exceptions.ErrorDetails;
-
-namespace BookService.Features.LoanBook;
+﻿namespace BookService.Features.LoanBook;
 
 public class LoanBookCmdHandler : IRequestHandler<LoanBookCmd, Unit>
 {

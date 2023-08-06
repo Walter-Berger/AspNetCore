@@ -1,12 +1,10 @@
-﻿using BookService.Endpoints.ApiRoutes;
-
-namespace BookService.Endpoints;
+﻿namespace BookService.Endpoints;
 
 public static class UpdateBook
 {
     public static IEndpointRouteBuilder MapUpdateBook(this IEndpointRouteBuilder endpoint)
     {
-        endpoint.MapPut(EndpointRoutes.Book.Update,  async (Guid id, UpdateBookRquest request, ISender mediator, CancellationToken ct) =>
+        endpoint.MapPut(EndpointRoutes.Book.Update, async (Guid id, UpdateBookRquest request, ISender mediator, CancellationToken ct) =>
         {
             var cmd = new UpdateBookCmd(
                 Id: id,

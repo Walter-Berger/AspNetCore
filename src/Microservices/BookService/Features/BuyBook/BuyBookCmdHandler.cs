@@ -1,6 +1,4 @@
-﻿using BookService.Exceptions.ErrorDetails;
-
-namespace BookService.Features.BuyBook;
+﻿namespace BookService.Features.BuyBook;
 
 public class BuyBookCmdHandler : IRequestHandler<BuyBookCmd, Unit>
 {

@@ -1,6 +1,4 @@
-﻿using Contracts.Events;
-
-namespace IdentityService.Features.Register;
+﻿namespace IdentityService.Features.Register;
 
 public class RegisterCmdHandler : IRequestHandler<RegisterCmd, Unit>
 {
@@ -23,7 +21,7 @@ public class RegisterCmdHandler : IRequestHandler<RegisterCmd, Unit>
 
         // create new user
         var identityUser = new IdentityUser
-        {   
+        {
             UserName = request.Email,
             Email = request.Email
         };

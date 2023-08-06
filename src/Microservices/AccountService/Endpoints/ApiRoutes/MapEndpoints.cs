@@ -1,6 +1,5 @@
 ﻿namespace AccountService.Endpoints.ApiRoutes;
 
-
 public static class MapEndpoints
 {
     public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)

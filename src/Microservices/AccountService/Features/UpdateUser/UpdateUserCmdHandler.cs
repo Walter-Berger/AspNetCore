@@ -1,6 +1,4 @@
-﻿using AccountService.Exceptions.ErrorDetails;
-
-namespace AccountService.Features.UpdateUser;
+﻿namespace AccountService.Features.UpdateUser;
 
 public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
 {

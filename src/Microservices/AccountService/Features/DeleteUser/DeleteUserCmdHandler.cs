@@ -1,7 +1,4 @@
-﻿using AccountService.Exceptions.ErrorDetails;
-using Contracts.Events;
-
-namespace AccountService.Features.DeleteUser;
+﻿namespace AccountService.Features.DeleteUser;
 
 public class DeleteUserCmdHandler : IRequestHandler<DeleteUserCmd, Unit>
 {

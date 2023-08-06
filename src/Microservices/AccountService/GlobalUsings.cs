@@ -1,6 +1,7 @@
 ﻿global using AccountService.Data;
 global using AccountService.Endpoints.ApiRoutes;
 global using AccountService.Exceptions;
+global using AccountService.Exceptions.ErrorDetails;
 global using AccountService.Features.CreateUser;
 global using AccountService.Features.DeleteUser;
 global using AccountService.Features.GetAllUsers;
