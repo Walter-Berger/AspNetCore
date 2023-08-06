@@ -9,7 +9,6 @@ global using AccountService.Features.GetUser;
 global using AccountService.Features.UpdateUser;
 global using AccountService.Middlewares;
 global using AccountService.Models;
-global using AccountService.Validators;
 global using Contracts.Events;
 global using Contracts.Requests;
 global using Contracts.Responses;

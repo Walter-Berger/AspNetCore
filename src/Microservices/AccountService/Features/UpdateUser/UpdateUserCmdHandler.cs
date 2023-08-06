@@ -3,10 +3,10 @@
 public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
 {
     public readonly DatabaseContext _databaseContext;
-    public readonly UserValidator _userValidator;
+    public readonly UpdateUserCmdValidator _userValidator;
     public readonly ITimeFactory _timeFactory;
 
-    public UpdateUserCmdHandler(DatabaseContext databaseContext, UserValidator userValidator, ITimeFactory timeFactory)
+    public UpdateUserCmdHandler(DatabaseContext databaseContext, UpdateUserCmdValidator userValidator, ITimeFactory timeFactory)
     {
         _databaseContext = databaseContext;
         _userValidator = userValidator;
@@ -15,6 +15,9 @@ public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
 
     public async Task<Unit> Handle(UpdateUserCmd request, CancellationToken cancellationToken)
     {
+        // check if updates are valid
+        await _userValidator.ValidateAndThrowAsync(request, cancellationToken);
+
         // check if user exists
         var user = await _databaseContext.Users.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
             ?? throw new NotFoundException(ErrorDetails.UserNotFound);
@@ -27,9 +30,6 @@ public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
             lastName: request.LastName,
             birthDateTimestampUnix: _timeFactory.DateOnlyToUnixTime(request.BirthDate)
         );
-
-        // check if updates are valid
-        await _userValidator.ValidateAndThrowAsync(updatedUser, cancellationToken);
 
         // update and save changes
         user.Update(updatedUser, _timeFactory.UnixTimeNow());

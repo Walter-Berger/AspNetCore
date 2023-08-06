@@ -3,10 +3,10 @@
 public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
 {
     private readonly DatabaseContext _databaseContext;
-    private readonly UserValidator _userValidator;
+    private readonly CreateUserCmdValidator _userValidator;
     private readonly ITimeFactory _timeFactory;
 
-    public CreateUserCmdHandler(DatabaseContext databaseContext, UserValidator userValidator, ITimeFactory timeFactory)
+    public CreateUserCmdHandler(DatabaseContext databaseContext, CreateUserCmdValidator userValidator, ITimeFactory timeFactory)
     {
         _databaseContext = databaseContext;
         _userValidator = userValidator;
@@ -15,6 +15,9 @@ public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
 
     public async Task<Unit> Handle(CreateUserCmd request, CancellationToken cancellationToken)
     {
+        // check if input is valid
+        await _userValidator.ValidateAndThrowAsync(request, cancellationToken);
+
         // check if email already exists in database
         bool emailAlreadyTaken = await _databaseContext.Users.AnyAsync(x => x.Email == request.Email, cancellationToken);
         if (emailAlreadyTaken)
@@ -30,9 +33,6 @@ public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
             lastName: request.LastName,
             birthDateTimestampUnix: _timeFactory.DateOnlyToUnixTime(request.BirthDate)
         );
-
-        // check if input is valid
-        await _userValidator.ValidateAndThrowAsync(user, cancellationToken);
 
         // save user in database
         await _databaseContext.AddAsync(user, cancellationToken);
