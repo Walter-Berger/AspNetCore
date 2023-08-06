@@ -1,4 +1,7 @@
-﻿namespace BookService.Extensions;
+﻿using Microsoft.Extensions.Logging;
+using Serilog;
+
+namespace Common.Extensions;
 
 public static class Logging
 {
@@ -15,3 +18,4 @@ public static class Logging
         return logging;
     }
 }
+

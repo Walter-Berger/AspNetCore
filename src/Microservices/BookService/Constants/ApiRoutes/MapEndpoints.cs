@@ -1,6 +1,6 @@
-﻿namespace BookService.Extensions;
+﻿namespace BookService.Constants.ApiRoutes;
 
-public static class ApiEndpoints
+public static class MapEndpoints
 {
     public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)
     {

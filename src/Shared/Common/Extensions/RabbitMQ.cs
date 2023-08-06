@@ -1,4 +1,8 @@
-﻿namespace AccountService.Extensions;
+﻿using MassTransit;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+
+namespace Common.Extensions;
 
 public static class RabbitMQ
 {
@@ -6,7 +10,7 @@ public static class RabbitMQ
     {
         services.AddMassTransit(x =>
         {
-            x.AddConsumers(Assembly.GetExecutingAssembly());
+            x.AddConsumers(Assembly.GetEntryAssembly());
 
             x.UsingRabbitMq((context, configurator) =>
             {

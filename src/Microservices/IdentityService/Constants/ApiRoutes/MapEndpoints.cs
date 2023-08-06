@@ -1,6 +1,6 @@
-﻿namespace IdentityService.Extensions;
+﻿namespace IdentityService.Constants.ApiRoutes;
 
-public static class ApiEndpoints
+public static class MapEndpoints
 {
     public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)
     {

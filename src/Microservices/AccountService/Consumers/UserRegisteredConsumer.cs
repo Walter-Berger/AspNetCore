@@ -1,6 +1,4 @@
-﻿using Contracts.Events;
-
-namespace AccountService.Consumers;
+﻿namespace AccountService.Consumers;
 
 public class UserRegisteredConsumer : IConsumer<UserRegisteredEvent>
 {
