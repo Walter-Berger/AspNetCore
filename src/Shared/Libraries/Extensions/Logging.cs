@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace Contracts.Extensions;
+namespace Libraries.Extensions;
 
 public static class Logging
 {

@@ -1,4 +1,4 @@
-﻿namespace Contracts.Interfaces;
+﻿namespace Libraries.Interfaces;
 
 public interface ITimeFactory
 {

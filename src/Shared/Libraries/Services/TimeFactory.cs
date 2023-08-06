@@ -1,6 +1,6 @@
-﻿using Contracts.Interfaces;
+﻿using Libraries.Interfaces;
 
-namespace Contracts.Services;
+namespace Libraries.Services;
 
 public class TimeFactory : ITimeFactory
 {

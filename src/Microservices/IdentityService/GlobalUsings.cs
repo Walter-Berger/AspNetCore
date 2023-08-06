@@ -1,5 +1,4 @@
 ﻿global using Contracts.Events;
-global using Contracts.Extensions;
 global using Contracts.Requests;
 global using Contracts.Responses;
 global using FluentValidation;
@@ -12,6 +11,7 @@ global using IdentityService.Features.Register;
 global using IdentityService.Interfaces;
 global using IdentityService.Middlewares;
 global using IdentityService.Services;
+global using Libraries.Extensions;
 global using MassTransit;
 global using MediatR;
 global using Microsoft.AspNetCore.Identity;
