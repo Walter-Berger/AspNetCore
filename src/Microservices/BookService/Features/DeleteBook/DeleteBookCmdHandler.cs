@@ -1,4 +1,6 @@
-﻿namespace BookService.Features.DeleteBook;
+﻿using BookService.Exceptions.ErrorDetails;
+
+namespace BookService.Features.DeleteBook;
 
 public class DeleteBookCmdHandler : IRequestHandler<DeleteBookCmd, Unit>
 {

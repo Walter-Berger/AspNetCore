@@ -1,4 +1,6 @@
-﻿namespace BookService.Endpoints;
+﻿using BookService.Endpoints.ApiRoutes;
+
+namespace BookService.Endpoints;
 
 public static class GetAllBooks
 {

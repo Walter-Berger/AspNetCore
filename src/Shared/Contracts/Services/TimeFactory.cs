@@ -1,4 +1,6 @@
-﻿namespace AccountService.Services;
+﻿using Contracts.Interfaces;
+
+namespace Contracts.Services;
 
 public class TimeFactory : ITimeFactory
 {
@@ -22,3 +24,4 @@ public class TimeFactory : ITimeFactory
         return dateString;
     }
 }
+

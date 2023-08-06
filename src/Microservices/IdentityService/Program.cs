@@ -1,5 +1,3 @@
-using Common.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // ------------ Start Parse Configuration ---------------- //

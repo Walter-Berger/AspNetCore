@@ -1,4 +1,6 @@
-﻿namespace AccountService.Features.CreateUser;
+﻿using AccountService.Exceptions.ErrorDetails;
+
+namespace AccountService.Features.CreateUser;
 
 public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
 {

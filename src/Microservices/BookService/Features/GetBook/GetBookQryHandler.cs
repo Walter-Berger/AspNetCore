@@ -1,4 +1,6 @@
-﻿namespace BookService.Features.GetBook;
+﻿using BookService.Exceptions.ErrorDetails;
+
+namespace BookService.Features.GetBook;
 
 public class GetBookQryHandler : IRequestHandler<GetBookQry, GetBookQryResult>
 {

@@ -1,4 +1,4 @@
-﻿namespace BookService.Constants.ErrorDetails;
+﻿namespace BookService.Exceptions.ErrorDetails;
 
 public static class ErrorDetails
 {

@@ -1,4 +1,6 @@
-﻿namespace AccountService.Validators;
+﻿using AccountService.Exceptions.ErrorDetails;
+
+namespace AccountService.Validators;
 
 public class UserValidator : AbstractValidator<User>
 {

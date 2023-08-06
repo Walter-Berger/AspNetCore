@@ -1,4 +1,4 @@
-﻿namespace BookService.Constants.ApiRoutes;
+﻿namespace BookService.Endpoints.ApiRoutes;
 
 public static class MapEndpoints
 {

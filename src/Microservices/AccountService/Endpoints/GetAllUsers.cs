@@ -1,4 +1,6 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Endpoints.ApiRoutes;
+
+namespace AccountService.Endpoints;
 
 public static class GetAllUsers
 {

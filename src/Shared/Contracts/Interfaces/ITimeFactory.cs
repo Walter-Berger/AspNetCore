@@ -1,4 +1,4 @@
-﻿namespace AccountService.Interfaces;
+﻿namespace Contracts.Interfaces;
 
 public interface ITimeFactory
 {

@@ -1,4 +1,5 @@
-﻿using Contracts.Events;
+﻿using AccountService.Exceptions.ErrorDetails;
+using Contracts.Events;
 
 namespace AccountService.Features.DeleteUser;
 

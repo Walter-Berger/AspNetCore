@@ -1,4 +1,5 @@
-﻿global using Contracts.Requests;
+﻿global using Contracts.Extensions;
+global using Contracts.Requests;
 global using Contracts.Responses;
 global using FluentValidation;
 global using IdentityService.Constants.ApiRoutes;
