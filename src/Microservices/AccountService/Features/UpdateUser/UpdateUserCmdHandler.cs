@@ -27,9 +27,8 @@ public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
             id: request.Id,
             email: request.Email,
             firstName: request.FirstName,
-            lastName: request.LastName,
-            birthDateTimestampUnix: _timeFactory.DateOnlyToUnixTime(request.BirthDate)
-        );
+            lastName: request.LastName
+            );
 
         // update and save changes
         user.Update(updatedUser, _timeFactory.UnixTimeNow());

@@ -6,19 +6,17 @@ public class User
     public string Email { get; private set; } = default!;
     public string FirstName { get; private set; } = default!;
     public string LastName { get; private set; } = default!;
-    public long BirthDateTimestampUnix { get; private set; }
     public long CreationTimestampUnix { get; init; }
     public long EditedTimestampUnix { get; private set; }
 
     private User() { }
 
-    public User(Guid id, string email, string firstName, string lastName, long birthDateTimestampUnix)
+    public User(Guid id, string email, string firstName, string lastName)
     {
         Id = id;
         Email = email;
         FirstName = firstName;
         LastName = lastName;
-        BirthDateTimestampUnix = birthDateTimestampUnix;
         CreationTimestampUnix = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         EditedTimestampUnix = CreationTimestampUnix;
     }
@@ -28,7 +26,6 @@ public class User
         Email = user.Email;
         FirstName = user.FirstName;
         LastName = user.LastName;
-        BirthDateTimestampUnix = user.BirthDateTimestampUnix;
         EditedTimestampUnix = editedTimestampUnix;
     }
 }

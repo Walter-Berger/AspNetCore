@@ -11,8 +11,7 @@ public static class UpdateUser
                     Id: id,
                     Email: request.Email,
                     FirstName: request.FirstName,
-                    LastName: request.LastName,
-                    BirthDate: request.BirthDate);
+                    LastName: request.LastName);
 
                 await mediator.Send(cmd, ct);
                 return Results.Ok();

@@ -27,9 +27,6 @@ namespace AccountService.Data.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<long>("BirthDateTimestampUnix")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("CreationTimestampUnix")
                         .HasColumnType("bigint");
 

@@ -4,13 +4,11 @@ public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
 {
     private readonly DatabaseContext _databaseContext;
     private readonly CreateUserCmdValidator _userValidator;
-    private readonly ITimeFactory _timeFactory;
 
-    public CreateUserCmdHandler(DatabaseContext databaseContext, CreateUserCmdValidator userValidator, ITimeFactory timeFactory)
+    public CreateUserCmdHandler(DatabaseContext databaseContext, CreateUserCmdValidator userValidator)
     {
         _databaseContext = databaseContext;
         _userValidator = userValidator;
-        _timeFactory = timeFactory;
     }
 
     public async Task<Unit> Handle(CreateUserCmd request, CancellationToken cancellationToken)
@@ -30,9 +28,8 @@ public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
             id: Guid.NewGuid(),
             email: request.Email,
             firstName: request.FirstName,
-            lastName: request.LastName,
-            birthDateTimestampUnix: _timeFactory.DateOnlyToUnixTime(request.BirthDate)
-        );
+            lastName: request.LastName
+            );
 
         // save user in database
         await _databaseContext.AddAsync(user, cancellationToken);

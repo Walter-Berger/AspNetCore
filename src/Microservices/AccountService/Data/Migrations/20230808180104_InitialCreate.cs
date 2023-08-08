@@ -19,7 +19,6 @@ namespace AccountService.Data.Migrations
                     Email = table.Column<string>(type: "text", nullable: false),
                     FirstName = table.Column<string>(type: "text", nullable: false),
                     LastName = table.Column<string>(type: "text", nullable: false),
-                    BirthDateTimestampUnix = table.Column<long>(type: "bigint", nullable: false),
                     CreationTimestampUnix = table.Column<long>(type: "bigint", nullable: false),
                     EditedTimestampUnix = table.Column<long>(type: "bigint", nullable: false)
                 },

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AccountService.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230805191046_InitialCreate")]
+    [Migration("20230808180104_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -29,9 +29,6 @@ namespace AccountService.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
-
-                    b.Property<long>("BirthDateTimestampUnix")
-                        .HasColumnType("bigint");
 
                     b.Property<long>("CreationTimestampUnix")
                         .HasColumnType("bigint");

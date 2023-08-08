@@ -21,9 +21,8 @@ public class GetUserQryHandler : IRequestHandler<GetUserQry, GetUserQryResult>
             Id: user.Id,
             Email: user.Email,
             FirstName: user.FirstName,
-            LastName: user.LastName,
-            BirthDate: _timeFactory.UnixTimeToDateString(user.BirthDateTimestampUnix)
-        );
+            LastName: user.LastName
+            );
 
         return result;
     }

@@ -4,5 +4,4 @@ public record UpdateUserCmd(
     Guid Id,
     string Email,
     string FirstName,
-    string LastName,
-    DateOnly BirthDate) : IRequest<Unit>;
+    string LastName) : IRequest<Unit>;

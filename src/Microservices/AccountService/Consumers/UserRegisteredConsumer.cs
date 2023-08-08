@@ -24,8 +24,8 @@ public class UserRegisteredConsumer : IConsumer<UserRegisteredEvent>
             id: Guid.NewGuid(),
             email: message.Email,
             firstName: message.FirstName,
-            lastName: message.LastName,
-            birthDateTimestampUnix: default);
+            lastName: message.LastName
+            );
 
         await _databaseContext.Users.AddAsync(user);
         await _databaseContext.SaveChangesAsync();

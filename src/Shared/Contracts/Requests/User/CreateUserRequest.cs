@@ -2,6 +2,5 @@
 
 public record CreateUserRequest(
     string FirstName,
-    string LastName,
-    DateOnly BirthDate);
+    string LastName);
 

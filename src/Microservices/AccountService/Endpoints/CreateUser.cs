@@ -13,8 +13,7 @@ public static class CreateUser
                 var cmd = new CreateUserCmd(
                     Email: email,
                     FirstName: request.FirstName,
-                    LastName: request.LastName,
-                    BirthDate: request.BirthDate);
+                    LastName: request.LastName);
 
                 await mediator.Send(cmd, ct);
                 return Results.Ok();

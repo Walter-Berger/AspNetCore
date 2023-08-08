@@ -14,17 +14,5 @@ public class CreateUserCmdValidator : AbstractValidator<CreateUserCmd>
 
         RuleFor(x => x.LastName)
             .NotEmpty();
-
-        RuleFor(x => x.BirthDate)
-            .NotEmpty()
-            .Must(BeAValidBirthDate)
-            .WithMessage(ValidationErrorDetails.InvalidBirthDate);
-    }
-
-    private static bool BeAValidBirthDate(DateOnly birthDate)
-    {
-        DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
-        DateOnly tooOld = currentDate.AddYears(-100);
-        return birthDate <= currentDate && birthDate >= tooOld;
     }
 }

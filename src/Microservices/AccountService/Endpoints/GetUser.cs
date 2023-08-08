@@ -12,8 +12,7 @@ public static class GetUser
                 Id: result.Id,
                 Email: result.Email,
                 FirstName: result.FirstName,
-                LastName: result.LastName,
-                BirthDate: result.BirthDate);
+                LastName: result.LastName);
 
             return Results.Ok(response);
         })
