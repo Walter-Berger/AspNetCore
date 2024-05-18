@@ -1,4 +1,4 @@
-﻿namespace AccountService.Exceptions;
+﻿namespace Libraries.Exceptions;
 
 public class DuplicationException : Exception
 {

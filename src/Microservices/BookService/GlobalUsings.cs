@@ -1,7 +1,7 @@
 ﻿global using BookService.Data;
 global using BookService.Endpoints.ApiRoutes;
-global using BookService.Exceptions;
-global using BookService.Exceptions.ErrorDetails;
+global using Libraries.Exceptions;
+global using Libraries.Exceptions.ErrorDetails;
 global using BookService.Features.BuyBook;
 global using BookService.Features.CreateBook;
 global using BookService.Features.DeleteBook;

@@ -1,6 +1,5 @@
 ﻿global using AccountService.Data;
 global using AccountService.Endpoints.ApiRoutes;
-global using AccountService.Exceptions;
 global using AccountService.Exceptions.ErrorDetails;
 global using AccountService.Features.CreateUser;
 global using AccountService.Features.DeleteUser;
@@ -13,6 +12,8 @@ global using Contracts.Events;
 global using Contracts.Requests;
 global using Contracts.Responses;
 global using FluentValidation;
+global using Libraries.Exceptions;
+global using Libraries.Exceptions.ErrorDetails;
 global using Libraries.Extensions;
 global using Libraries.Interfaces;
 global using Libraries.Services;

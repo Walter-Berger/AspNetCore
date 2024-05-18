@@ -1,4 +1,4 @@
-﻿namespace BookService.Exceptions;
+﻿namespace Libraries.Exceptions;
 
 public class DatabaseException : Exception
 {
