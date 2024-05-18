@@ -34,7 +34,7 @@ public class RegisterCmdHandler : IRequestHandler<RegisterCmd, Unit>
             throw new Exception(errors.First());
         }
 
-        // create an event which will be publisherd to rabbitmq broker
+        // create an event which will be published to rabbitmq broker
         var userRegisteredEvent = new UserRegisteredEvent(
             Email: request.Email,
             FirstName: request.FirstName,
