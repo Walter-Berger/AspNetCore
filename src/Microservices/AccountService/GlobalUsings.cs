@@ -8,7 +8,7 @@ global using AccountService.Features.UpdateUser;
 global using Common.Middlewares;
 global using AccountService.Models;
 global using Common.Exceptions;
-global using Common.Exceptions.ErrorDetails;
+global using Common.ErrorDetails;
 global using Common.Extensions;
 global using Common.Interfaces;
 global using Common.Services;

@@ -1,5 +1,5 @@
-﻿global using Common.Exceptions;
-global using Common.Exceptions.ErrorDetails;
+﻿global using Common.ErrorDetails;
+global using Common.Exceptions;
 global using Common.Extensions;
 global using Common.Middlewares;
 global using Contracts.Events;
