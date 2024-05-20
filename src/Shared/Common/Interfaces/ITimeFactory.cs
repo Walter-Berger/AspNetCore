@@ -1,4 +1,4 @@
-﻿namespace Libraries.Interfaces;
+﻿namespace Common.Interfaces;
 
 public interface ITimeFactory
 {

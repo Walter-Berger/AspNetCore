@@ -4,7 +4,7 @@ public static class UpdateBook
 {
     public static IEndpointRouteBuilder MapUpdateBook(this IEndpointRouteBuilder endpoint)
     {
-        endpoint.MapPut(EndpointRoutes.Book.Update, async (Guid id, UpdateBookRquest request, ISender mediator, CancellationToken ct) =>
+        endpoint.MapPut("/api/books/{id}", async (Guid id, UpdateBookRquest request, ISender mediator, CancellationToken ct) =>
         {
             var cmd = new UpdateBookCmd(
                 Id: id,

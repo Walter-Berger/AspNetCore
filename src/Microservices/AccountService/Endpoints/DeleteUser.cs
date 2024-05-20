@@ -4,7 +4,7 @@ public static class DeleteUser
 {
     public static IEndpointRouteBuilder MapDeleteUser(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapDelete(EndpointRoutes.User.Delete, async (Guid id, ISender mediator, CancellationToken ct) =>
+        endpoints.MapDelete("/api/users/{id}", async (Guid id, ISender mediator, CancellationToken ct) =>
         {
             var cmd = new DeleteUserCmd(id);
             await mediator.Send(cmd, ct);

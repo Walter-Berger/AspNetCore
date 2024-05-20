@@ -1,6 +1,6 @@
-﻿using Libraries.Interfaces;
+﻿using Common.Interfaces;
 
-namespace Libraries.Services;
+namespace Common.Services;
 
 public class TimeFactory : ITimeFactory
 {

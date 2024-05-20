@@ -1,14 +1,13 @@
-﻿namespace BookService.Endpoints.ApiRoutes;
+﻿namespace BookService.Endpoints;
 
 public static class MapEndpoints
 {
-    public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapBookEndpoints(this IEndpointRouteBuilder endpoints)
     {
         // map book endpoints
         endpoints.MapCreateBook();
         endpoints.MapBuyBook();
         endpoints.MapLoanBook();
-        endpoints.MapGetAllBooks();
         endpoints.MapGetBook();
         endpoints.MapUpdateBook();
         endpoints.MapDeleteBook();

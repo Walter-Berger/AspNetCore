@@ -1,4 +1,4 @@
-﻿namespace Libraries.Exceptions.ErrorDetails;
+﻿namespace Common.Exceptions.ErrorDetails;
 
 public static class ErrorDetails
 {

@@ -4,7 +4,7 @@ public static class Login
 {
     public static IEndpointRouteBuilder MapLogin(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapGet(EndpointRoutes.Auth.Login, async (HttpContext context, ICredentialService credentialService, ISender mediator, CancellationToken ct) =>
+        endpoints.MapGet("/api/auth", async (HttpContext context, ICredentialService credentialService, ISender mediator, CancellationToken ct) =>
         {
             var authHeader = context.Request.Headers.Authorization.ToString();
             var (userName, password) = credentialService.ExtractUsernameAndPassword(authHeader);

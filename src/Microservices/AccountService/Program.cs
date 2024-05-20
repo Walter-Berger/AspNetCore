@@ -40,6 +40,6 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.MapApiEndpoints();
+app.MapUserEndpoints();
 
 app.Run();

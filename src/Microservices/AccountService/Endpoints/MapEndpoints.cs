@@ -1,13 +1,12 @@
-﻿namespace AccountService.Endpoints.ApiRoutes;
+﻿namespace AccountService.Endpoints;
 
 public static class MapEndpoints
 {
-    public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapUserEndpoints(this IEndpointRouteBuilder endpoints)
     {
         // map user endpoints
         endpoints.MapCreateUser();
         endpoints.MapGetUser();
-        endpoints.MapGetAllUsers();
         endpoints.MapUpdateUser();
         endpoints.MapDeleteUser();
 

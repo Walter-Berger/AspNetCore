@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Libraries.Extensions;
+namespace Common.Extensions;
 
 public static class RabbitMQ
 {

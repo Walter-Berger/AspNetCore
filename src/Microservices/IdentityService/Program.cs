@@ -35,6 +35,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.MapApiEndpoints();
+app.MapAuthEndpoints();
 
 app.Run();

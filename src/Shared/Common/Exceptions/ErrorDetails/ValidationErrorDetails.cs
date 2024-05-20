@@ -1,4 +1,4 @@
-﻿namespace AccountService.Exceptions.ErrorDetails;
+﻿namespace Common.Exceptions.ErrorDetails;
 
 public static class ValidationErrorDetails
 {

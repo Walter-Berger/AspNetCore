@@ -1,8 +1,8 @@
-﻿namespace IdentityService.Endpoints.ApiRoutes;
+﻿namespace IdentityService.Endpoints;
 
 public static class MapEndpoints
 {
-    public static IEndpointRouteBuilder MapApiEndpoints(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder MapAuthEndpoints(this IEndpointRouteBuilder endpoints)
     {
         // map auth endpoints
         endpoints.MapLogin();

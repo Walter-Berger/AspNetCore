@@ -4,7 +4,7 @@ public static class CreateUser
 {
     public static IEndpointRouteBuilder MapCreateUser(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPost(EndpointRoutes.User.Create,
+        endpoints.MapPost("/api/users", 
             async (HttpContext context, CreateUserRequest request, ISender mediator, CancellationToken ct) =>
             {
                 var claims = context.User.Claims;

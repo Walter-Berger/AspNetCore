@@ -1,4 +1,4 @@
-﻿namespace Libraries.Exceptions;
+﻿namespace Common.Exceptions;
 
 public class DatabaseException : Exception
 {

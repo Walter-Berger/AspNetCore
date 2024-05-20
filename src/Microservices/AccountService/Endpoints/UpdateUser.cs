@@ -4,7 +4,7 @@ public static class UpdateUser
 {
     public static IEndpointRouteBuilder MapUpdateUser(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPut(EndpointRoutes.User.Update,
+        endpoints.MapPut("/api/users/{id}",
             async (Guid id, UpdateUserRequest request, ISender mediator, CancellationToken ct) =>
             {
                 var cmd = new UpdateUserCmd(
