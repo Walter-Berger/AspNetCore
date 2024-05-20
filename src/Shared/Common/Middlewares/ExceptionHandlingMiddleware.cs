@@ -1,4 +1,9 @@
-﻿namespace BookService.Middlewares;
+﻿using Common.Exceptions;
+using FluentValidation;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+
+namespace Common.Middlewares;
 
 public class ExceptionHandlingMiddleware : IMiddleware
 {
@@ -34,6 +39,7 @@ public class ExceptionHandlingMiddleware : IMiddleware
         {
             NotFoundException => StatusCodes.Status404NotFound,
             DatabaseException => StatusCodes.Status500InternalServerError,
+            DuplicationException => StatusCodes.Status409Conflict,
             _ => StatusCodes.Status500InternalServerError
         };
 
@@ -46,8 +52,8 @@ public class ExceptionHandlingMiddleware : IMiddleware
 
         // return error details
         await result.ExecuteAsync(httpContext);
-    }    
-    
+    }
+
     private static async Task HandleValidationExceptionAsync(HttpContext httpContext, ValidationException validationException)
     {
         var keys = validationException.Errors.Select(e => e.PropertyName).Distinct();

@@ -1,6 +1,7 @@
 ﻿global using Common.Exceptions;
 global using Common.Exceptions.ErrorDetails;
 global using Common.Extensions;
+global using Common.Middlewares;
 global using Contracts.Events;
 global using Contracts.Requests;
 global using Contracts.Responses;
@@ -10,7 +11,6 @@ global using IdentityService.Endpoints;
 global using IdentityService.Features.Login;
 global using IdentityService.Features.Register;
 global using IdentityService.Interfaces;
-global using IdentityService.Middlewares;
 global using IdentityService.Services;
 global using MassTransit;
 global using MediatR;

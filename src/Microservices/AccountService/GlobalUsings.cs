@@ -5,7 +5,7 @@ global using AccountService.Features.DeleteUser;
 global using AccountService.Features.GetAllUsers;
 global using AccountService.Features.GetUser;
 global using AccountService.Features.UpdateUser;
-global using AccountService.Middlewares;
+global using Common.Middlewares;
 global using AccountService.Models;
 global using Common.Exceptions;
 global using Common.Exceptions.ErrorDetails;
