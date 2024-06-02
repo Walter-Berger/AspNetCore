@@ -1,6 +1,4 @@
-﻿using Common.ErrorDetails;
-
-namespace IdentityService.Services;
+﻿namespace IdentityService.Services;
 
 public class CredentialService : ICredentialService
 {
@@ -29,7 +27,7 @@ public class CredentialService : ICredentialService
             throw new BadHttpRequestException(ErrorDetails.InvalidCredentialsFormat);
         }
 
-        // get username und email from the credentials
+        // get username und password from the credentials
         string username = credentialsArray[0];
         string password = credentialsArray[1];
 
