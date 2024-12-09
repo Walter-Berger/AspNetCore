@@ -27,7 +27,7 @@ public class ExceptionHandlingMiddleware : IMiddleware
         }
         catch (Exception exception)
         {
-            _logger.LogError(exception.Message);
+            _logger.LogError(message: exception.Message);
             await HandleExceptionAsync(context, exception);
         }
     }

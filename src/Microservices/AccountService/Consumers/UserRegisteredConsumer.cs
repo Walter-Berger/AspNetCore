@@ -21,7 +21,7 @@ public class UserRegisteredConsumer : IConsumer<UserRegisteredEvent>
         }
 
         user = new User(
-            id: Guid.NewGuid(),
+            id: message.Id,
             email: message.Email,
             firstName: message.FirstName,
             lastName: message.LastName

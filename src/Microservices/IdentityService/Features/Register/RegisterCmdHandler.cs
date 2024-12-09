@@ -36,6 +36,7 @@ public class RegisterCmdHandler : IRequestHandler<RegisterCmd, Unit>
 
         // create an event which will be published to rabbitmq broker
         var userRegisteredEvent = new UserRegisteredEvent(
+            Id: Guid.Parse(identityUser.Id),
             Email: request.Email,
             FirstName: request.FirstName,
             LastName: request.LastName);
