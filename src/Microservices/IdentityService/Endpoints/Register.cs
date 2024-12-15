@@ -1,10 +1,11 @@
 ﻿namespace IdentityService.Endpoints;
 
-public static class Register
+
+public class Register : IEndpoint
 {
-    public static IEndpointRouteBuilder MapRegister(this IEndpointRouteBuilder endpoints)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        endpoints.MapPost("/api/auth", async (RegisterRequest request, ISender mediator, CancellationToken ct) =>
+        app.MapPost("/api/auth", async (RegisterRequest request, ISender mediator, CancellationToken ct) =>
         {
             var cmd = new RegisterCmd(
                 Email: request.Email,
@@ -16,7 +17,5 @@ public static class Register
             await mediator.Send(cmd, ct);
             return Results.Ok();
         });
-
-        return endpoints;
     }
 }

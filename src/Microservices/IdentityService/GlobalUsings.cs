@@ -7,7 +7,6 @@ global using Contracts.Requests;
 global using Contracts.Responses;
 global using FluentValidation;
 global using IdentityService.Data;
-global using IdentityService.Endpoints;
 global using IdentityService.Features.Login;
 global using IdentityService.Features.Register;
 global using IdentityService.Interfaces;

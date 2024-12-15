@@ -1,10 +1,11 @@
 ﻿namespace IdentityService.Endpoints;
 
-public static class Login
+
+public class Login : IEndpoint
 {
-    public static IEndpointRouteBuilder MapLogin(this IEndpointRouteBuilder endpoints)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        endpoints.MapGet("/api/auth", async (HttpContext context, ICredentialService credentialService, ISender mediator, CancellationToken ct) =>
+        app.MapGet("/api/auth", async (HttpContext context, ICredentialService credentialService, ISender mediator, CancellationToken ct) =>
         {
             var authHeader = context.Request.Headers.Authorization.ToString();
             var (userName, password) = credentialService.ExtractUsernameAndPassword(authHeader);
@@ -14,7 +15,5 @@ public static class Login
             var response = new LoginResponse(result.accessToken);
             return Results.Ok(response);
         });
-
-        return endpoints;
     }
 }

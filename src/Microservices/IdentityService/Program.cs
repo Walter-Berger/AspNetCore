@@ -14,6 +14,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Pr
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddScoped<ICredentialService, CredentialService>();
 builder.Services.AddRabbitMq();
+builder.Services.AddCustomEndpoints(typeof(Program).Assembly);
 
 builder.Services.AddScoped<IJwtService, JwtService>(_ => new JwtService(
     jwtKey: jwtKey,
@@ -35,6 +36,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.MapAuthEndpoints();
+app.MapCustomEndpoints();
 
 app.Run();
