@@ -37,55 +37,6 @@
       ],
       "UpstreamPathTemplate": "/api/users",
       "UpstreamHttpMethod": [ "Get", "Post" ]
-    },
-    // BookService routes
-    {
-      "DownstreamPathTemplate": "/api/books/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5021
-        }
-      ],
-      "UpstreamPathTemplate": "/api/books/{id}",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/books",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5021
-        }
-      ],
-      "UpstreamPathTemplate": "/api/books",
-      "UpstreamHttpMethod": [ "Get", "Post" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/books/{id}/buy",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5021
-        }
-      ],
-      "UpstreamPathTemplate": "/api/books/{id}/buy",
-      "UpstreamHttpMethod": [ "Post" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/books/{id}/loan",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5021
-        }
-      ],
-      "UpstreamPathTemplate": "/api/books/{id}/loan",
-      "UpstreamHttpMethod": [ "Post" ]
     }
   ],
   "GlobalConfiguration": {
