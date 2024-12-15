@@ -1,10 +1,10 @@
 ﻿namespace AccountService.Endpoints;
 
-public static class CreateUser
+public class CreateUser : IEndpoint
 {
-    public static IEndpointRouteBuilder MapCreateUser(this IEndpointRouteBuilder endpoints)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        endpoints.MapPost("/api/users", 
+        app.MapPost("/api/users",
             async (HttpContext context, CreateUserRequest request, ISender mediator, CancellationToken ct) =>
             {
                 var claims = context.User.Claims;
@@ -19,7 +19,5 @@ public static class CreateUser
                 return Results.Ok();
             })
             .RequireAuthorization();
-
-        return endpoints;
     }
 }

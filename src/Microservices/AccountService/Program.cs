@@ -14,6 +14,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Pr
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddScoped<ITimeFactory, TimeFactory>();
 builder.Services.AddRabbitMq();
+builder.Services.AddCustomEndpoints(typeof(Program).Assembly);
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
@@ -40,6 +41,6 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.MapUserEndpoints();
+app.MapCustomEndpoints();
 
 app.Run();

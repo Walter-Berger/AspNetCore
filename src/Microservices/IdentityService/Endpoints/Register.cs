@@ -1,6 +1,5 @@
 ﻿namespace IdentityService.Endpoints;
 
-
 public class Register : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)

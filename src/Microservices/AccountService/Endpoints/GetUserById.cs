@@ -1,15 +1,12 @@
 ﻿namespace AccountService.Endpoints;
 
-public class GetUser : IEndpoint
+public class GetUserById : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        // Returns the currently logged in user
-        app.MapGet("/api/users/me", async (ISender mediator, CancellationToken ct, HttpContext httpContext) =>
+        // Returns a single user with the given id
+        app.MapGet("/api/users/{id}", async (Guid id, ISender mediator, CancellationToken ct) =>
         {
-            var userClaims = httpContext.User.Claims;
-            var id = Guid.Parse(userClaims.First(i => i.Type == ClaimTypes.NameIdentifier).Value);
-
             var qry = new GetUserQry(id);
             var result = await mediator.Send(qry, ct);
             var response = new GetUserResponse(

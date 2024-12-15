@@ -1,17 +1,15 @@
 ﻿namespace AccountService.Endpoints;
 
-public static class DeleteUser
+public class DeleteUser : IEndpoint
 {
-    public static IEndpointRouteBuilder MapDeleteUser(this IEndpointRouteBuilder endpoints)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        endpoints.MapDelete("/api/users/{id}", async (Guid id, ISender mediator, CancellationToken ct) =>
+        app.MapDelete("/api/users/{id}", async (Guid id, ISender mediator, CancellationToken ct) =>
         {
             var cmd = new DeleteUserCmd(id);
             await mediator.Send(cmd, ct);
             return Results.Ok();
         })
         .RequireAuthorization();
-
-        return endpoints;
     }
 }
