@@ -1,3 +1,5 @@
-﻿namespace AccountService.Features.DeleteUser;
+﻿using MediatR;
+
+namespace AccountService.Features.DeleteUser;
 
 public record DeleteUserCmd(Guid Id) : IRequest<Unit>;

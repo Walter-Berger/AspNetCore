@@ -1,3 +1,13 @@
+using Common.Extensions;
+using Common.Middlewares;
+using FluentValidation;
+using IdentityService.Data;
+using IdentityService.Interfaces;
+using IdentityService.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // ------------ Start Parse Configuration ---------------- //

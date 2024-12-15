@@ -1,4 +1,11 @@
-﻿namespace AccountService.Features.GetAllUsers;
+﻿using AccountService.Data;
+using Common.ErrorDetails;
+using Common.Exceptions;
+using Common.Interfaces;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Features.GetAllUsers;
 
 public class GetAllUsersQryHandler : IRequestHandler<GetAllUsersQry, List<GetAllUsersQryResult>>
 {

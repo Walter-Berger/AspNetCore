@@ -1,4 +1,9 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.GetAllUsers;
+using Common.Extensions;
+using Contracts.User.Responses;
+using MediatR;
+
+namespace AccountService.Endpoints;
 
 public class GetAllUsers : IEndpoint
 {

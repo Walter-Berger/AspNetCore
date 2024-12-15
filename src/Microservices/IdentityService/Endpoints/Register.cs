@@ -1,4 +1,9 @@
-﻿namespace IdentityService.Endpoints;
+﻿using Common.Extensions;
+using Contracts.Auth.Requests;
+using IdentityService.Features.Register;
+using MediatR;
+
+namespace IdentityService.Endpoints;
 
 public class Register : IEndpoint
 {

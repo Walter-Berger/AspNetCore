@@ -1,3 +1,5 @@
-﻿namespace AccountService.Features.GetAllUsers;
+﻿using MediatR;
+
+namespace AccountService.Features.GetAllUsers;
 
 public record GetAllUsersQry : IRequest<List<GetAllUsersQryResult>>;

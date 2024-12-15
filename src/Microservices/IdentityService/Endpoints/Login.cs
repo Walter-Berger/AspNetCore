@@ -1,4 +1,10 @@
-﻿namespace IdentityService.Endpoints;
+﻿using Common.Extensions;
+using Contracts.Auth.Responses;
+using IdentityService.Features.Login;
+using IdentityService.Interfaces;
+using MediatR;
+
+namespace IdentityService.Endpoints;
 
 public class Login : IEndpoint
 {

@@ -1,4 +1,10 @@
-﻿namespace IdentityService.Features.Register;
+﻿using Common.ErrorDetails;
+using Contracts.Events;
+using MassTransit;
+using MediatR;
+using Microsoft.AspNetCore.Identity;
+
+namespace IdentityService.Features.Register;
 
 public class RegisterCmdHandler : IRequestHandler<RegisterCmd, Unit>
 {

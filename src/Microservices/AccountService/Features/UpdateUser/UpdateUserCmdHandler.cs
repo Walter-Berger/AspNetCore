@@ -1,4 +1,13 @@
-﻿namespace AccountService.Features.UpdateUser;
+﻿using AccountService.Data;
+using AccountService.Models;
+using Common.ErrorDetails;
+using Common.Exceptions;
+using Common.Interfaces;
+using FluentValidation;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Features.UpdateUser;
 
 public class UpdateUserCmdHandler : IRequestHandler<UpdateUserCmd, Unit>
 {

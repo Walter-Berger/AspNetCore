@@ -1,4 +1,7 @@
-﻿namespace AccountService.Features.CreateUser;
+﻿using Common.ErrorDetails;
+using FluentValidation;
+
+namespace AccountService.Features.CreateUser;
 
 public class CreateUserCmdValidator : AbstractValidator<CreateUserCmd>
 {

@@ -1,4 +1,6 @@
-﻿namespace AccountService.Features.UpdateUser;
+﻿using MediatR;
+
+namespace AccountService.Features.UpdateUser;
 
 public record UpdateUserCmd(
     Guid Id,

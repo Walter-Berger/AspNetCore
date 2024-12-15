@@ -1,4 +1,10 @@
-﻿namespace AccountService.Consumers;
+﻿using AccountService.Data;
+using AccountService.Models;
+using Contracts.Events;
+using MassTransit;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Consumers;
 
 public class UserRegisteredConsumer : IConsumer<UserRegisteredEvent>
 {

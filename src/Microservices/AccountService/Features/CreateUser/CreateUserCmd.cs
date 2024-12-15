@@ -1,4 +1,6 @@
-﻿namespace AccountService.Features.CreateUser;
+﻿using MediatR;
+
+namespace AccountService.Features.CreateUser;
 
 public record CreateUserCmd(
     string Email,

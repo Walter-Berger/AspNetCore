@@ -1,4 +1,8 @@
-﻿namespace IdentityService.Services;
+﻿using Common.ErrorDetails;
+using IdentityService.Interfaces;
+using System.Text;
+
+namespace IdentityService.Services;
 
 public class CredentialService : ICredentialService
 {

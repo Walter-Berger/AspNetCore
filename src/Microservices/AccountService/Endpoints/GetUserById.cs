@@ -1,4 +1,9 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.GetUser;
+using Common.Extensions;
+using Contracts.User.Responses;
+using MediatR;
+
+namespace AccountService.Endpoints;
 
 public class GetUserById : IEndpoint
 {

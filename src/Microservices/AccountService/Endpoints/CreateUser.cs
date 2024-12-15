@@ -1,4 +1,10 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.CreateUser;
+using Common.Extensions;
+using Contracts.User.Requests;
+using MediatR;
+using System.Security.Claims;
+
+namespace AccountService.Endpoints;
 
 public class CreateUser : IEndpoint
 {

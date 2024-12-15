@@ -1,4 +1,8 @@
-﻿namespace AccountService.Data;
+﻿using AccountService.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace AccountService.Data;
 
 public class UserConfigurations : IEntityTypeConfiguration<User>
 {

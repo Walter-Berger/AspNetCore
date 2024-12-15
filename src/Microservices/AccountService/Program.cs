@@ -1,3 +1,14 @@
+using AccountService.Data;
+using Common.Extensions;
+using Common.Interfaces;
+using Common.Middlewares;
+using Common.Services;
+using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // ------------ Start Parse Configuration ---------------- //

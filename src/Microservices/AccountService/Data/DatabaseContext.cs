@@ -1,4 +1,8 @@
-﻿namespace AccountService.Data;
+﻿using AccountService.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+
+namespace AccountService.Data;
 
 public class DatabaseContext : DbContext
 {

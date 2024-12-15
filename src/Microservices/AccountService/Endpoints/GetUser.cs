@@ -1,4 +1,10 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.GetUser;
+using Common.Extensions;
+using Contracts.User.Responses;
+using MediatR;
+using System.Security.Claims;
+
+namespace AccountService.Endpoints;
 
 public class GetUser : IEndpoint
 {

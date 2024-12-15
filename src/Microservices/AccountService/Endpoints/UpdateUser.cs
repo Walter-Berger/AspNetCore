@@ -1,4 +1,9 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.UpdateUser;
+using Common.Extensions;
+using Contracts.User.Requests;
+using MediatR;
+
+namespace AccountService.Endpoints;
 
 public class UpdateUser : IEndpoint
 {

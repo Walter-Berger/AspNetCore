@@ -1,4 +1,12 @@
-﻿namespace AccountService.Features.DeleteUser;
+﻿using AccountService.Data;
+using Common.ErrorDetails;
+using Common.Exceptions;
+using Contracts.Events;
+using MassTransit;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Features.DeleteUser;
 
 public class DeleteUserCmdHandler : IRequestHandler<DeleteUserCmd, Unit>
 {

@@ -1,4 +1,8 @@
-﻿namespace IdentityService.Consumers;
+﻿using Contracts.Events;
+using MassTransit;
+using Microsoft.AspNetCore.Identity;
+
+namespace IdentityService.Consumers;
 
 public class UserDeletedConsumer : IConsumer<UserDeletedEvent>
 {

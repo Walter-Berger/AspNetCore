@@ -1,3 +1,3 @@
-﻿namespace Contracts.Responses;
+﻿namespace Contracts.Auth.Responses;
 
 public record LoginResponse(string AccessToken);

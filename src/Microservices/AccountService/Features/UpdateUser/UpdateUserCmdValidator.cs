@@ -1,4 +1,7 @@
-﻿namespace AccountService.Features.UpdateUser;
+﻿using Common.ErrorDetails;
+using FluentValidation;
+
+namespace AccountService.Features.UpdateUser;
 
 public class UpdateUserCmdValidator : AbstractValidator<UpdateUserCmd>
 {

@@ -1,4 +1,10 @@
-﻿namespace IdentityService.Features.Login;
+﻿using Common.ErrorDetails;
+using Common.Exceptions;
+using IdentityService.Interfaces;
+using MediatR;
+using Microsoft.AspNetCore.Identity;
+
+namespace IdentityService.Features.Login;
 
 public class LoginQryHandler : IRequestHandler<LoginQry, LoginQryResult>
 {

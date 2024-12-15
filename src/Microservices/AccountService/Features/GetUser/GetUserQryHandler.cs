@@ -1,4 +1,11 @@
-﻿namespace AccountService.Features.GetUser;
+﻿using AccountService.Data;
+using Common.ErrorDetails;
+using Common.Exceptions;
+using Common.Interfaces;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Features.GetUser;
 
 public class GetUserQryHandler : IRequestHandler<GetUserQry, GetUserQryResult>
 {

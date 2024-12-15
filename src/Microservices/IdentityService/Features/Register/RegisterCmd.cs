@@ -1,4 +1,6 @@
-﻿namespace IdentityService.Features.Register;
+﻿using MediatR;
+
+namespace IdentityService.Features.Register;
 
 public record RegisterCmd(
     string Email,

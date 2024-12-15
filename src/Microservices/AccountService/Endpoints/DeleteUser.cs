@@ -1,4 +1,8 @@
-﻿namespace AccountService.Endpoints;
+﻿using AccountService.Features.DeleteUser;
+using Common.Extensions;
+using MediatR;
+
+namespace AccountService.Endpoints;
 
 public class DeleteUser : IEndpoint
 {

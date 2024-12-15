@@ -1,4 +1,12 @@
-﻿namespace AccountService.Features.CreateUser;
+﻿using AccountService.Data;
+using AccountService.Models;
+using Common.ErrorDetails;
+using Common.Exceptions;
+using FluentValidation;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace AccountService.Features.CreateUser;
 
 public class CreateUserCmdHandler : IRequestHandler<CreateUserCmd, Unit>
 {
