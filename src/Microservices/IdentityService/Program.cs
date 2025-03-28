@@ -45,6 +45,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 
 var app = builder.Build();
 
+app.UseAutoMigrations();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapCustomEndpoints();
 

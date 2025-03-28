@@ -49,6 +49,7 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+app.UseAutoMigrations();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
