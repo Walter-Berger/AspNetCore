@@ -25,6 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Shared\Common
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Tests", "tests\AccountService.Tests\AccountService.Tests.csproj", "{8856CBDC-284B-4771-9346-264BC5094757}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.Tests", "tests\IdentityService.Tests\IdentityService.Tests.csproj", "{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C15BF835-5FE2-4D4A-87F0-8FDBE5A20C84} = {C15BF835-5FE2-4D4A-87F0-8FDBE5A20C84}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +60,10 @@ Global
 		{8856CBDC-284B-4771-9346-264BC5094757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8856CBDC-284B-4771-9346-264BC5094757}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8856CBDC-284B-4771-9346-264BC5094757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +78,7 @@ Global
 		{A4655E6A-CDF6-4D77-8866-1619F6BBB692} = {96F21414-9276-402A-B940-98E11E3F8ACB}
 		{3F4E8632-BFD5-4C19-A008-3745354C7567} = {96F21414-9276-402A-B940-98E11E3F8ACB}
 		{8856CBDC-284B-4771-9346-264BC5094757} = {BBCA3627-E386-4A4A-BEAC-947F923346E5}
+		{53F77A9B-2E1E-43F3-A26A-FE8F13FB2E79} = {BBCA3627-E386-4A4A-BEAC-947F923346E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {189AA28F-C4D2-4F99-A50A-641429E2003D}
