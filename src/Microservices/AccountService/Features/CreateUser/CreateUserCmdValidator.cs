@@ -12,7 +12,7 @@ public class CreateUserCmdValidator : AbstractValidator<CreateUserCmd>
             .EmailAddress()
             .WithMessage(ValidationErrorDetails.InvalidEmail)
             .Matches(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-            .WithMessage(ValidationErrorDetails.InvalidEmail); ;
+            .WithMessage(ValidationErrorDetails.InvalidEmail);
 
         RuleFor(x => x.FirstName)
             .NotEmpty()
