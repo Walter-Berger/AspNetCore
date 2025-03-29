@@ -30,7 +30,7 @@ public class CreateUserTest : BaseIntegrationTest
     public async Task Create_ShouldThrowValidationError_WhenEmailIsInvalid()
     {
         // Arrange
-        var command = new CreateUserCmd("john.xina", "John", "Xina");
+        var command = new CreateUserCmd("john.xina@.", "John", "Xina");
 
         // Act
         var exception = await Assert.ThrowsAsync<ValidationException>(() => Sender.Send(command));
