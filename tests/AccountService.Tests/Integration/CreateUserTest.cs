@@ -1,4 +1,5 @@
 using AccountService.Features.CreateUser;
+using Common.ErrorDetails;
 using FluentValidation;
 
 namespace AccountService.Tests.Integration;
@@ -21,6 +22,8 @@ public class CreateUserTest : BaseIntegrationTest
         // Assert
         var user = DbContext.Users.FirstOrDefault(p => p.Email == command.Email);
         Assert.NotNull(user);
+        Assert.Contains("John", user.FirstName);
+        Assert.Contains("Xina", user.LastName);
     }
 
     [Fact]
@@ -30,10 +33,11 @@ public class CreateUserTest : BaseIntegrationTest
         var command = new CreateUserCmd("john.xina", "John", "Xina");
 
         // Act
-        Task Action() => Sender.Send(command);
+        var exception = await Assert.ThrowsAsync<ValidationException>(() => Sender.Send(command));
 
         // Assert
-        await Assert.ThrowsAsync<ValidationException>(Action);
+        Assert.IsType<ValidationException>(exception);
+        Assert.Contains(ValidationErrorDetails.InvalidEmail, exception.Message);
     }
 
     [Fact]
@@ -43,10 +47,11 @@ public class CreateUserTest : BaseIntegrationTest
         var command = new CreateUserCmd("john.xina@gmx.at", "", "Xina");
 
         // Act
-        Task Action() => Sender.Send(command);
+        var exception = await Assert.ThrowsAsync<ValidationException>(() => Sender.Send(command));
 
         // Assert
-        await Assert.ThrowsAsync<ValidationException>(Action);
+        Assert.IsType<ValidationException>(exception);
+        Assert.Contains(ValidationErrorDetails.InvalidFirstName, exception.Message);
     }
 
     [Fact]
@@ -56,9 +61,10 @@ public class CreateUserTest : BaseIntegrationTest
         var command = new CreateUserCmd("john.xina@gmx.at", "John", "");
 
         // Act
-        Task Action() => Sender.Send(command);
+        var exception = await Assert.ThrowsAsync<ValidationException>(() => Sender.Send(command));
 
         // Assert
-        await Assert.ThrowsAsync<ValidationException>(Action);
+        Assert.IsType<ValidationException>(exception);
+        Assert.Contains(ValidationErrorDetails.InvalidLastName, exception.Message);
     }
 }

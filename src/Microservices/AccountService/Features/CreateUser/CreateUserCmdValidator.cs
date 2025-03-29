@@ -13,9 +13,11 @@ public class CreateUserCmdValidator : AbstractValidator<CreateUserCmd>
             .WithMessage(ValidationErrorDetails.InvalidEmail);
 
         RuleFor(x => x.FirstName)
-            .NotEmpty();
+            .NotEmpty()
+            .WithMessage(ValidationErrorDetails.InvalidFirstName);
 
         RuleFor(x => x.LastName)
-            .NotEmpty();
+            .NotEmpty()
+            .WithMessage(ValidationErrorDetails.InvalidLastName);
     }
 }
