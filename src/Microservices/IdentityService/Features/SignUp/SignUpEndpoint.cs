@@ -1,17 +1,15 @@
 ﻿using Common.Extensions;
-using Contracts.Auth.Requests;
-using IdentityService.Features.Register;
 using MediatR;
 
-namespace IdentityService.Endpoints;
+namespace IdentityService.Features.SignUp;
 
-public class Register : IEndpoint
+public class SignUpEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("/api/auth", async (RegisterRequest request, ISender mediator, CancellationToken ct) =>
+        app.MapPost("/api/auth", async (SignUp.Request request, ISender mediator, CancellationToken ct) =>
         {
-            var cmd = new RegisterCmd(
+            var cmd = new SignUp.Request(
                 Email: request.Email,
                 FirstName: request.FirstName,
                 LastName: request.LastName,
