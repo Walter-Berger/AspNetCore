@@ -4,16 +4,16 @@ using Microsoft.AspNetCore.Identity;
 
 namespace IdentityService.Consumers;
 
-public class UserDeletedConsumer : IConsumer<UserDeletedEvent>
+public class DeleteUserConsumer : IConsumer<DeleteUserEvent>
 {
     private readonly UserManager<IdentityUser> _userManager;
 
-    public UserDeletedConsumer(UserManager<IdentityUser> userManager)
+    public DeleteUserConsumer(UserManager<IdentityUser> userManager)
     {
         _userManager = userManager;
     }
 
-    public async Task Consume(ConsumeContext<UserDeletedEvent> context)
+    public async Task Consume(ConsumeContext<DeleteUserEvent> context)
     {
         var message = context.Message;
 

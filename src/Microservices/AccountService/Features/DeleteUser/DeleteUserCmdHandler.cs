@@ -26,7 +26,7 @@ public class DeleteUserCmdHandler : IRequestHandler<DeleteUserCmd, Unit>
             ?? throw new NotFoundException(ErrorDetails.UserNotFound);
 
         // create an event which will be publisherd to rabbitmq broker
-        var userDeletedEvent = new UserDeletedEvent(Email: user.Email);
+        var userDeletedEvent = new DeleteUserEvent(Email: user.Email);
 
         await _publisher.Publish(userDeletedEvent, cancellationToken);
 
