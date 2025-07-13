@@ -1,12 +1,10 @@
 ﻿using Common.Extensions;
-using Contracts.Auth.Responses;
-using IdentityService.Features.Login;
 using IdentityService.Interfaces;
 using MediatR;
 
-namespace IdentityService.Endpoints;
+namespace IdentityService.Features.Login;
 
-public class Login : IEndpoint
+public class LoginEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
@@ -15,9 +13,9 @@ public class Login : IEndpoint
             var authHeader = context.Request.Headers.Authorization.ToString();
             var (userName, password) = credentialService.ExtractUsernameAndPassword(authHeader);
 
-            var qry = new LoginQry(userName, password);
+            var qry = new Login.Request(userName, password);
             var result = await mediator.Send(qry, ct);
-            var response = new LoginResponse(result.accessToken);
+            var response = new Login.Response(result.AccessToken);
             return Results.Ok(response);
         });
     }
