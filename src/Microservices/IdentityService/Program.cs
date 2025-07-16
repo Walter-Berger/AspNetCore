@@ -2,6 +2,7 @@ using Common.Extensions;
 using Common.Middlewares;
 using FluentValidation;
 using IdentityService.Data;
+using IdentityService.Features.Login;
 using IdentityService.Interfaces;
 using IdentityService.Services;
 using Microsoft.AspNetCore.Identity;
@@ -22,9 +23,10 @@ builder.Services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(conn
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
-builder.Services.AddScoped<ICredentialService, CredentialService>();
 builder.Services.AddRabbitMq();
 builder.Services.AddCustomEndpoints(typeof(Program).Assembly);
+builder.Services.AddScoped<ICredentialService, CredentialService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
 
 builder.Services.AddScoped<IJwtService, JwtService>(_ => new JwtService(
     jwtKey: jwtKey,
