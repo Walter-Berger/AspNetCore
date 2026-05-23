@@ -14,11 +14,12 @@ public class UpdateUser : IEndpoint
         app.MapPut("/api/users",
             async (UpdateUserRequest request, HttpContext httpContext, ISender mediator, CancellationToken ct) =>
             {
-                var userClaims = httpContext.User.Claims;
-                var id = Guid.Parse(userClaims.First(i => i.Type == ClaimTypes.NameIdentifier).Value);
+                var userIdClaim = httpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userIdClaim is null || !Guid.TryParse(userIdClaim, out var userId))
+                    return Results.Unauthorized();
 
                 var cmd = new UpdateUserCmd(
-                        Id: id,
+                        Id: userId,
                         Email: request.Email,
                         FirstName: request.FirstName,
                         LastName: request.LastName);
