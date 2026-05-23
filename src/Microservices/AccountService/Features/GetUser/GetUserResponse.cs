@@ -1,6 +1,6 @@
 ﻿namespace AccountService.Features.GetUser;
 
-public record GetUserQryResult(
+public record GetUserResponse(
     Guid Id,
     string Email,
     string FirstName,

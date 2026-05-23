@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace AccountService.Features.UpdateUser;
 
-public class UpdateUserCmdValidator : AbstractValidator<UpdateUserCmd>
+public class UpdateUserValidator : AbstractValidator<UpdateUserCmd>
 {
-    public UpdateUserCmdValidator()
+    public UpdateUserValidator()
     {
         RuleFor(x => x.Id)
             .NotEmpty().NotNull();

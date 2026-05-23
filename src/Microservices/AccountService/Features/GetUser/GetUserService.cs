@@ -2,29 +2,32 @@
 using Common.ErrorDetails;
 using Common.Exceptions;
 using Common.Interfaces;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountService.Features.GetUser;
 
-public class GetUserQryHandler : IRequestHandler<GetUserQry, GetUserQryResult>
+public interface IGetUserService
+{
+    Task<GetUserResponse> GetUser(GetUserQuery query, CancellationToken cancellationToken);
+}
+public class GetUserService : IGetUserService
 {
     private readonly DatabaseContext _databaseContext;
     private readonly ITimeFactory _timeFactory;
 
-    public GetUserQryHandler(DatabaseContext databaseContext, ITimeFactory timeFactory)
+    public GetUserService(DatabaseContext databaseContext, ITimeFactory timeFactory)
     {
         _databaseContext = databaseContext;
         _timeFactory = timeFactory;
     }
 
-    public async Task<GetUserQryResult> Handle(GetUserQry request, CancellationToken cancellationToken)
+    public async Task<GetUserResponse> GetUser(GetUserQuery request, CancellationToken cancellationToken)
     {
         // check if user exists in database
         var user = await _databaseContext.Users.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
             ?? throw new NotFoundException(ErrorDetails.UserNotFound);
 
-        var result = new GetUserQryResult(
+        var result = new GetUserResponse(
             Id: user.Id,
             Email: user.Email,
             FirstName: user.FirstName,

@@ -10,6 +10,7 @@ public class CreateUser : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
+        // Creates a user
         app.MapPost("/api/users",
             async (HttpContext context, CreateUserRequest request, ISender mediator, CancellationToken ct) =>
             {

@@ -1,4 +1,6 @@
 using AccountService.Data;
+using AccountService.Features.GetUser;
+using AccountService.Features.UpdateUser;
 using Common.Extensions;
 using Common.Interfaces;
 using Common.Middlewares;
@@ -26,6 +28,9 @@ builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddScoped<ITimeFactory, TimeFactory>();
 builder.Services.AddRabbitMq();
 builder.Services.AddCustomEndpoints(typeof(Program).Assembly);
+
+builder.Services.AddScoped<UpdateUserService>();
+builder.Services.AddScoped<GetUserService>();
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
